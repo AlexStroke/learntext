@@ -13,6 +13,8 @@
 		3264CA3829EC111E00BCEA74 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3264CA2629EC111A00BCEA74 /* ContentView.swift */; };
 		3264CA3929EC111E00BCEA74 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3264CA2729EC111E00BCEA74 /* Assets.xcassets */; };
 		3264CA3A29EC111E00BCEA74 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3264CA2729EC111E00BCEA74 /* Assets.xcassets */; };
+		3270139529EC19690006C5E1 /* LearningViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3270139429EC19690006C5E1 /* LearningViewModel.swift */; };
+		3270139629EC19690006C5E1 /* LearningViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3270139429EC19690006C5E1 /* LearningViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,7 @@
 		3264CA2C29EC111E00BCEA74 /* LearnText.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LearnText.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3264CA3229EC111E00BCEA74 /* LearnText.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LearnText.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3264CA3429EC111E00BCEA74 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
+		3270139429EC19690006C5E1 /* LearningViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +60,7 @@
 				3264CA2529EC111A00BCEA74 /* LearnTextApp.swift */,
 				3264CA2629EC111A00BCEA74 /* ContentView.swift */,
 				3264CA2729EC111E00BCEA74 /* Assets.xcassets */,
+				3270139429EC19690006C5E1 /* LearningViewModel.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -176,6 +180,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3270139529EC19690006C5E1 /* LearningViewModel.swift in Sources */,
 				3264CA3729EC111E00BCEA74 /* ContentView.swift in Sources */,
 				3264CA3529EC111E00BCEA74 /* LearnTextApp.swift in Sources */,
 			);
@@ -185,6 +190,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3270139629EC19690006C5E1 /* LearningViewModel.swift in Sources */,
 				3264CA3829EC111E00BCEA74 /* ContentView.swift in Sources */,
 				3264CA3629EC111E00BCEA74 /* LearnTextApp.swift in Sources */,
 			);

@@ -1,8 +1,7 @@
 import Foundation
 import AVFoundation
 
-
-class LearningViewModel: ObservableObject {
+class LearningViewModel: NSObject, ObservableObject, AVSpeechSynthesizerDelegate {
     @Published var userText: String = ""
     @Published var sentences: [String] = []
     @Published var currentSentenceIndex = 0
@@ -16,6 +15,11 @@ class LearningViewModel: ObservableObject {
     @Published var showingVoicePicker = false
 
     private var synthesizer = AVSpeechSynthesizer()
+    
+    override init() {
+        super.init()
+        synthesizer.delegate = self
+    }
     
     func splitTextIntoSentences(text: String) -> [String] {
         let regex = try! NSRegularExpression(pattern: "[^.!?]+[.!?]+")
@@ -42,11 +46,6 @@ class LearningViewModel: ObservableObject {
     }
     
     func speak(_ text: String) {
-        for voice in AVSpeechSynthesisVoice.speechVoices() {
-            if voice.language.hasPrefix("en") {
-                print("Language: \(voice.language), Identifier: \(voice.identifier), Name: \(voice.name)")
-            }
-        }
         let utterance = AVSpeechUtterance(string: text)
         utterance.voice = selectedVoice
         utterance.rate = 0.4
@@ -59,6 +58,14 @@ class LearningViewModel: ObservableObject {
         
         if isRepeating {
             speak(sentences[currentSentenceIndex])
+        }
+    }
+
+    func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didFinish utterance: AVSpeechUtterance) {
+        if isRepeating {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                self.speak(self.sentences[self.currentSentenceIndex])
+            }
         }
     }
 }

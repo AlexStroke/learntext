@@ -18,11 +18,11 @@ struct ContentView: View {
 
                     HStack(spacing: 20) {
                         Button(action: {
-                            viewModel.showNextSentence()
+                            viewModel.showPreviousSentence()
                         }) {
-                            Text("Next")
+                            Image(systemName: "backward.end.fill")
                                 .foregroundColor(.white)
-                                .frame(width: 100, height: 44)
+                                .frame(width: 80, height: 44)
                                 .background(buttonColor)
                                 .cornerRadius(22)
                         }
@@ -30,9 +30,9 @@ struct ContentView: View {
                         Button(action: {
                             viewModel.speak(viewModel.sentences[viewModel.currentSentenceIndex])
                         }) {
-                            Text("Speak")
+                            Image(systemName: "play.fill")
                                 .foregroundColor(.white)
-                                .frame(width: 100, height: 44)
+                                .frame(width: 80, height: 44)
                                 .background(buttonColor)
                                 .cornerRadius(22)
                         }
@@ -40,12 +40,24 @@ struct ContentView: View {
                         Button(action: {
                             viewModel.toggleRepeating()
                         }) {
-                            Text(viewModel.isRepeating ? "Stop" : "Repeat")
+                            Image(systemName: viewModel.isRepeating ? "stop.fill" : "repeat")
                                 .foregroundColor(.white)
-                                .frame(width: 100, height: 44)
+                                .frame(width: 80, height: 44)
                                 .background(buttonColor)
                                 .cornerRadius(22)
                         }
+                        
+                        Button(action: {
+                            viewModel.showNextSentence()
+                        }) {
+                            Image(systemName: "forward.end.fill")
+                                .foregroundColor(.white)
+                                .frame(width: 80, height: 44)
+                                .background(buttonColor)
+                                .cornerRadius(22)
+                        }
+                        
+                        
                     }
 
                     Button(action: {

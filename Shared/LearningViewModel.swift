@@ -34,6 +34,13 @@ class LearningViewModel: ObservableObject {
         }
     }
     
+    func showPreviousSentence() {
+        currentSentenceIndex = (currentSentenceIndex - 1) % sentences.count
+        if isRepeating {
+            speak(sentences[currentSentenceIndex])
+        }
+    }
+    
     func speak(_ text: String) {
         for voice in AVSpeechSynthesisVoice.speechVoices() {
             if voice.language.hasPrefix("en") {

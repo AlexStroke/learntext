@@ -4,7 +4,7 @@ import AVFoundation
 struct ContentView: View {
     @StateObject private var viewModel = LearningViewModel()
     
-    private let buttonColor = Color(red: 69 / 255, green: 64 / 255, blue: 255 / 255)
+    private let buttonColor = Color(red: 30 / 255, green: 160 / 255, blue: 200 / 255)
     
     var body: some View {
         ZStack {

@@ -65,12 +65,30 @@ struct ContentView: View {
                         .overlay(RoundedRectangle(cornerRadius: 16).stroke(Color.gray, lineWidth: 1))
                         .frame(height: 200)
 
-                    Picker("Select Voice", selection: $viewModel.selectedVoice) {
-                        ForEach(viewModel.availableVoices, id: \.self) { voice in
-                            Text(voice.name).tag(voice)
+                    Button(action: {
+                        viewModel.showingVoicePicker = true
+                    }) {
+                        HStack {
+                            Text(viewModel.selectedVoice?.name ?? "Select Voice")
+                                .foregroundColor(.primary)
                         }
                     }
-                    .pickerStyle(MenuPickerStyle())
+                    .sheet(isPresented: $viewModel.showingVoicePicker) {
+                        NavigationView {
+                            List {
+                                ForEach(viewModel.availableVoices, id: \.self) { voice in
+                                    Button(action: {
+                                        viewModel.selectedVoice = voice
+                                        viewModel.showingVoicePicker = false
+                                    }) {
+                                        Text(voice.name)
+                                            .foregroundColor(.primary)
+                                    }
+                                }
+                            }
+                            .navigationTitle("Select Voice")
+                        }
+                    }
 
                     Button(action: {
                         viewModel.sentences = viewModel.splitTextIntoSentences(text: viewModel.userText)
@@ -89,6 +107,7 @@ struct ContentView: View {
     }
 }
 
+@available(iOS 16.0, *)
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()

@@ -1,14 +1,19 @@
 import Foundation
 import AVFoundation
 
+
 class LearningViewModel: ObservableObject {
     @Published var userText: String = ""
     @Published var sentences: [String] = []
     @Published var currentSentenceIndex = 0
     @Published var isRepeating = false
     @Published var isLearning = false
-    @Published var availableVoices: [AVSpeechSynthesisVoice] = AVSpeechSynthesisVoice.speechVoices()
-    @Published var selectedVoice: AVSpeechSynthesisVoice? = AVSpeechSynthesisVoice(identifier: "com.apple.speech.synthesis.voice.serena.premium")
+    @Published var availableVoices: [AVSpeechSynthesisVoice] = AVSpeechSynthesisVoice.speechVoices().filter { if #available(iOS 16.0, *) {
+        $0.quality == .enhanced || $0.quality == .premium
+    } else {
+    }; return $0.quality == .enhanced || $0.quality == .default }
+    @Published var selectedVoice: AVSpeechSynthesisVoice? = AVSpeechSynthesisVoice(identifier: "com.apple.voice.enhanced.en-US.Evan")
+    @Published var showingVoicePicker = false
 
     private var synthesizer = AVSpeechSynthesizer()
     
@@ -37,7 +42,7 @@ class LearningViewModel: ObservableObject {
         }
         let utterance = AVSpeechUtterance(string: text)
         utterance.voice = selectedVoice
-        utterance.rate = 0.3
+        utterance.rate = 0.4
 
         synthesizer.speak(utterance)
     }

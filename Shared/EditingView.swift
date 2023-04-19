@@ -44,6 +44,7 @@ struct EditingView: View {
             Button(action: {
                 viewModel.sentences = viewModel.splitTextIntoSentences(text: viewModel.userText)
                 viewModel.isLearning = true
+                viewModel.speak(viewModel.sentences[viewModel.currentSentenceIndex])
             }) {
                 Text("Start Learning")
                     .foregroundColor(.white)

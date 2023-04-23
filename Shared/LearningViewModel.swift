@@ -32,12 +32,12 @@ class LearningViewModel: NSObject, ObservableObject, AVSpeechSynthesizerDelegate
     }
     
     func showNextSentence() {
-        currentSentenceIndex = (currentSentenceIndex + 1) % sentences.count
+        currentSentenceIndex = (currentSentenceIndex + 1 + sentences.count) % sentences.count
         speak(sentences[currentSentenceIndex])
     }
     
     func showPreviousSentence() {
-        currentSentenceIndex = (currentSentenceIndex - 1) % sentences.count
+        currentSentenceIndex = (currentSentenceIndex - 1 + sentences.count) % sentences.count
         speak(sentences[currentSentenceIndex])
     }
     

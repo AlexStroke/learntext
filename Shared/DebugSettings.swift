@@ -1,0 +1,9 @@
+import Foundation
+
+struct DebugSettings {
+    #if DEBUG
+    static let defaultUserText: String = "My name is Alexander, and I am a highly motivated and adaptable Quality Assurance engineer with a diverse background and over five years of experience in QA Engineering. I have been honing my expertise in functional testing for software, as well as test automation using Python with PyTest. I have a proven track record of working effectively in diverse teams and delivering high-quality results. I have worked with five well-established IT companies, such as Radario, Ailet Solutions, Tinkoff bank, United Credit Bureau, and currently Soramitsu, where I've been responsible for maintaining and improving test frameworks, validating software configurations, and providing technical support to development teams. I am highly focused and have a strong passion for work, learning, and personal development. I am a quick learner and excel at planning and organizing my work to ensure tasks are completed on time and to the highest standards. Additionally, I enjoy working as part of a team and am always eager to contribute my skills and knowledge to help achieve the team's goals. I believe my diverse background and expertise make me an ideal candidate for the Software Engineer in Test role at XM company. I am excited about the opportunity to work in a FinTech environment, focus on building transformative technology, and further develop my skills while contributing to the company's growth and success. Also, I am attracted to the company's strong corporate values, commitment to employee development, and emphasis on a supportive and open-minded work environment. I am confident that my skills, experience, and enthusiasm will enable me to make a significant contribution to XM company and help the company achieve its quality objectives."
+    #else
+    static let defaultUserText: String = ""
+    #endif
+}

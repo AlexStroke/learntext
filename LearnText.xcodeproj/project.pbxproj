@@ -19,6 +19,8 @@
 		3294EBC729EDBEF600B02215 /* EditingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3294EBC529EDBEF600B02215 /* EditingView.swift */; };
 		3294EBC929EDBF2B00B02215 /* LearningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3294EBC829EDBF2B00B02215 /* LearningView.swift */; };
 		3294EBCA29EDBF2B00B02215 /* LearningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3294EBC829EDBF2B00B02215 /* LearningView.swift */; };
+		3294EBCF29F56CE300B02215 /* DebugSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3294EBCE29F56CE300B02215 /* DebugSettings.swift */; };
+		3294EBD029F56CE300B02215 /* DebugSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3294EBCE29F56CE300B02215 /* DebugSettings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +33,7 @@
 		3270139429EC19690006C5E1 /* LearningViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningViewModel.swift; sourceTree = "<group>"; };
 		3294EBC529EDBEF600B02215 /* EditingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditingView.swift; sourceTree = "<group>"; };
 		3294EBC829EDBF2B00B02215 /* LearningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningView.swift; sourceTree = "<group>"; };
+		3294EBCE29F56CE300B02215 /* DebugSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugSettings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +72,7 @@
 				3270139429EC19690006C5E1 /* LearningViewModel.swift */,
 				3294EBC529EDBEF600B02215 /* EditingView.swift */,
 				3294EBC829EDBF2B00B02215 /* LearningView.swift */,
+				3294EBCE29F56CE300B02215 /* DebugSettings.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -190,6 +194,7 @@
 			files = (
 				3270139529EC19690006C5E1 /* LearningViewModel.swift in Sources */,
 				3264CA3729EC111E00BCEA74 /* ContentView.swift in Sources */,
+				3294EBCF29F56CE300B02215 /* DebugSettings.swift in Sources */,
 				3264CA3529EC111E00BCEA74 /* LearnTextApp.swift in Sources */,
 				3294EBC929EDBF2B00B02215 /* LearningView.swift in Sources */,
 				3294EBC629EDBEF600B02215 /* EditingView.swift in Sources */,
@@ -202,6 +207,7 @@
 			files = (
 				3270139629EC19690006C5E1 /* LearningViewModel.swift in Sources */,
 				3264CA3829EC111E00BCEA74 /* ContentView.swift in Sources */,
+				3294EBD029F56CE300B02215 /* DebugSettings.swift in Sources */,
 				3264CA3629EC111E00BCEA74 /* LearnTextApp.swift in Sources */,
 				3294EBCA29EDBF2B00B02215 /* LearningView.swift in Sources */,
 				3294EBC729EDBEF600B02215 /* EditingView.swift in Sources */,

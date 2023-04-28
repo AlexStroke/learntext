@@ -2,21 +2,24 @@ import SwiftUI
 import AVFoundation
 
 struct ContentView: View {
-    @StateObject private var viewModel = LearningViewModel()
+    @StateObject private var learningViewModel = LearningViewModel()
+    @StateObject private var editingViewModel = EditingViewModel()
     
     var body: some View {
         ZStack {
             Color.white.edgesIgnoringSafeArea(.all)
 
             VStack(spacing: 30) {
-                if viewModel.isLearning {
-                    LearningView(viewModel: viewModel)
+                if learningViewModel.isLearning {
+                    LearningView(viewModel: learningViewModel)
                 } else {
-                    EditingView(viewModel: viewModel)
+                    EditingView(editingViewModel: editingViewModel)
                 }
             }
             .padding()
         }
+        .environmentObject(editingViewModel)
+        .environmentObject(learningViewModel)
     }
 }
 

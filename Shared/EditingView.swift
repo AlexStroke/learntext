@@ -2,7 +2,8 @@
 import SwiftUI
 
 struct EditingView: View {
-    @ObservedObject var viewModel: LearningViewModel
+    @ObservedObject var editingViewModel: EditingViewModel
+    @EnvironmentObject var learningViewModel: LearningViewModel
     
     private let buttonColor = Color(red: 30 / 255, green: 160 / 255, blue: 200 / 255)
     
@@ -11,26 +12,26 @@ struct EditingView: View {
             Text("Enter your text:")
                 .font(.system(size: 24, weight: .bold, design: .rounded))
 
-            TextEditor(text: $viewModel.userText)
+            TextEditor(text: $editingViewModel.userText)
                 .padding()
                 .overlay(RoundedRectangle(cornerRadius: 16).stroke(Color.gray, lineWidth: 1))
                 .frame(height: 200)
 
             Button(action: {
-                viewModel.showingVoicePicker = true
+                editingViewModel.showingVoicePicker = true
             }) {
                 HStack {
-                    Text(viewModel.selectedVoice?.name ?? "Select Voice")
+                    Text(editingViewModel.selectedVoice?.name ?? "Select Voice")
                         .foregroundColor(.primary)
                 }
             }
-            .sheet(isPresented: $viewModel.showingVoicePicker) {
+            .sheet(isPresented: $editingViewModel.showingVoicePicker) {
                 NavigationView {
                     List {
-                        ForEach(viewModel.availableVoices, id: \.self) { voice in
+                        ForEach(editingViewModel.availableVoices, id: \.self) { voice in
                             Button(action: {
-                                viewModel.selectedVoice = voice
-                                viewModel.showingVoicePicker = false
+                                editingViewModel.selectedVoice = voice
+                                editingViewModel.showingVoicePicker = false
                             }) {
                                 Text(voice.name)
                                     .foregroundColor(.primary)
@@ -42,9 +43,10 @@ struct EditingView: View {
             }
 
             Button(action: {
-                viewModel.sentences = viewModel.splitTextIntoSentences(text: viewModel.userText)
-                viewModel.isLearning = true
-                viewModel.speak(viewModel.sentences[viewModel.currentSentenceIndex])
+                learningViewModel.selectedVoice = editingViewModel.selectedVoice
+                learningViewModel.sentences = learningViewModel.splitTextIntoSentences(text: editingViewModel.userText)
+                learningViewModel.isLearning = true
+                learningViewModel.speak(learningViewModel.sentences[learningViewModel.currentSentenceIndex])
             }) {
                 Text("Start Learning")
                     .foregroundColor(.white)

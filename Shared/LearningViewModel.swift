@@ -1,21 +1,18 @@
+// LearningViewModel.swift
 import Foundation
 import AVFoundation
 
 class LearningViewModel: NSObject, ObservableObject, AVSpeechSynthesizerDelegate {
-    @Published var userText: String = DebugSettings.defaultUserText
     @Published var sentences: [String] = []
     @Published var currentSentenceIndex = 0
     @Published var isRepeating = false
+    @Published var selectedVoice: AVSpeechSynthesisVoice? = nil
     @Published var isLearning = false
-    @Published var availableVoices: [AVSpeechSynthesisVoice] = []
-    @Published var selectedVoice: AVSpeechSynthesisVoice? = AVSpeechSynthesisVoice(identifier: "com.apple.voice.enhanced.en-US.Evan")
-    @Published var showingVoicePicker = false
 
     private var synthesizer = AVSpeechSynthesizer()
     
     override init() {
         super.init()
-        availableVoices = filterAvailableVoices()
         synthesizer.delegate = self
     }
     
@@ -42,7 +39,7 @@ class LearningViewModel: NSObject, ObservableObject, AVSpeechSynthesizerDelegate
     func speak(_ text: String) {
         let utterance = AVSpeechUtterance(string: text)
         utterance.voice = selectedVoice
-        utterance.rate = 0.4
+        utterance.rate = 0.5
 
         synthesizer.speak(utterance)
     }
@@ -59,16 +56,6 @@ class LearningViewModel: NSObject, ObservableObject, AVSpeechSynthesizerDelegate
         if isRepeating {
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                 self.speak(self.sentences[self.currentSentenceIndex])
-            }
-        }
-    }
-    
-    func filterAvailableVoices() -> [AVSpeechSynthesisVoice] {
-        return AVSpeechSynthesisVoice.speechVoices().filter { voice in
-            if #available(iOS 16.0, *) {
-                return voice.quality == .enhanced || voice.quality == .premium
-            } else {
-                return voice.quality == .enhanced || voice.quality == .default
             }
         }
     }

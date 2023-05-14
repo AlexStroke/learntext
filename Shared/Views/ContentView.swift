@@ -4,6 +4,7 @@ import AVFoundation
 enum Screen {
     case editing
     case learning
+    case trainingSelecting
 }
 
 struct ContentView: View {
@@ -22,6 +23,8 @@ struct ContentView: View {
                     EditingView(editingViewModel: editingViewModel, currentScreen: $currentScreen)
                 case .learning:
                     LearningView(viewModel: learningViewModel, currentScreen: $currentScreen)
+                case .trainingSelecting:
+                    TrainingSelectionView(editingViewModel: editingViewModel, currentScreen: $currentScreen)
                 }
             }
             .padding()

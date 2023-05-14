@@ -5,9 +5,7 @@ struct EditingView: View {
     @ObservedObject var editingViewModel: EditingViewModel
     @EnvironmentObject var learningViewModel: LearningViewModel
     @Binding var currentScreen: Screen
-    
-    private let buttonColor = Color(red: 30 / 255, green: 160 / 255, blue: 200 / 255)
-    
+        
     var body: some View {
         VStack {
             Text("Enter your text:")
@@ -44,15 +42,13 @@ struct EditingView: View {
             }
 
             Button(action: {
-                self.currentScreen = .learning
+                self.currentScreen = .trainingSelecting
                 learningViewModel.selectedVoice = editingViewModel.selectedVoice
-                learningViewModel.sentences = learningViewModel.splitTextIntoSentences(text: editingViewModel.userText)
-                learningViewModel.speak(learningViewModel.sentences[learningViewModel.currentSentenceIndex])
             }) {
                 Text("Choose training")
                     .foregroundColor(.white)
                     .frame(width: 200, height: 44)
-                    .background(buttonColor)
+                    .background(GlobalColors.buttonColor)
                     .cornerRadius(22)
             }
         }

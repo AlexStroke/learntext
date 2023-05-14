@@ -5,8 +5,6 @@ struct LearningView: View {
     @ObservedObject var viewModel: LearningViewModel
     @Binding var currentScreen: Screen
     
-    private let buttonColor = Color(red: 30 / 255, green: 160 / 255, blue: 200 / 255)
-    
     var body: some View {
         VStack(spacing: 30) {
             Text(viewModel.sentences[viewModel.currentSentenceIndex])
@@ -20,7 +18,7 @@ struct LearningView: View {
                     Image(systemName: "backward.end.fill")
                         .foregroundColor(.white)
                         .frame(width: 80, height: 44)
-                        .background(buttonColor)
+                        .background(GlobalColors.buttonColor)
                         .cornerRadius(22)
                 }
 
@@ -30,7 +28,7 @@ struct LearningView: View {
                     Image(systemName: "play.fill")
                         .foregroundColor(.white)
                         .frame(width: 80, height: 44)
-                        .background(buttonColor)
+                        .background(GlobalColors.buttonColor)
                         .cornerRadius(22)
                 }
 
@@ -40,7 +38,7 @@ struct LearningView: View {
                     Image(systemName: viewModel.isRepeating ? "stop.fill" : "repeat")
                         .foregroundColor(.white)
                         .frame(width: 80, height: 44)
-                        .background(buttonColor)
+                        .background(GlobalColors.buttonColor)
                         .cornerRadius(22)
                 }
                 
@@ -50,7 +48,7 @@ struct LearningView: View {
                     Image(systemName: "forward.end.fill")
                         .foregroundColor(.white)
                         .frame(width: 80, height: 44)
-                        .background(buttonColor)
+                        .background(GlobalColors.buttonColor)
                         .cornerRadius(22)
                 }
             }
@@ -60,7 +58,7 @@ struct LearningView: View {
             }) {
                 Text("Edit Text")
                     .font(.system(size: 16, weight: .bold, design: .rounded))
-                    .foregroundColor(buttonColor)
+                    .foregroundColor(GlobalColors.buttonColor)
             }
             .padding(.top, 20)
         }

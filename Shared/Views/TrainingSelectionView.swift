@@ -3,6 +3,8 @@ import SwiftUI
 
 struct TrainingSelectionView: View {
     @EnvironmentObject var learningViewModel: LearningViewModel
+    @ObservedObject var editingViewModel: EditingViewModel
+    @Binding var currentScreen: Screen
     
     var body: some View {
         VStack {
@@ -17,10 +19,12 @@ struct TrainingSelectionView: View {
             }) {
                 TrainingCardView(title: "Brainstorming", description: "This training is not yet implemented.")
             }
-            .disabled(true) // Disable this button as the training is not yet implemented
+            .disabled(true)
             
             Button(action: {
-                learningViewModel.isLearning = true
+                currentScreen = .learning
+                learningViewModel.sentences = learningViewModel.splitTextIntoSentences(text: editingViewModel.userText)
+                learningViewModel.speak(learningViewModel.sentences[learningViewModel.currentSentenceIndex])
             }) {
                 TrainingCardView(title: "Survey", description: "Start learning with the Survey training.")
             }
@@ -49,14 +53,8 @@ struct TrainingCardView: View {
         }
         .frame(minWidth: 0, maxWidth: .infinity)
         .padding()
-        .background(Color.blue)
+        .background(GlobalColors.buttonColor)
         .cornerRadius(10)
         .padding(.vertical, 10)
-    }
-}
-
-struct TrainingSelectionView_Previews: PreviewProvider {
-    static var previews: some View {
-        TrainingSelectionView()
     }
 }

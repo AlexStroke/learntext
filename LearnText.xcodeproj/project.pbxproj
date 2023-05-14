@@ -27,8 +27,8 @@
 		3294EBD929FB9B2300B02215 /* VoiceSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3294EBD729FB9B2300B02215 /* VoiceSettings.swift */; };
 		32A7B7CC2A0FBABE00A4B2F8 /* TrainingSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A7B7CB2A0FBABE00A4B2F8 /* TrainingSelectionView.swift */; };
 		32A7B7CD2A0FBABE00A4B2F8 /* TrainingSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A7B7CB2A0FBABE00A4B2F8 /* TrainingSelectionView.swift */; };
-		32A7B7CF2A10CE9700A4B2F8 /* TrainingSelectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A7B7CE2A10CE9700A4B2F8 /* TrainingSelectionViewModel.swift */; };
-		32A7B7D02A10CE9700A4B2F8 /* TrainingSelectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A7B7CE2A10CE9700A4B2F8 /* TrainingSelectionViewModel.swift */; };
+		32A7B7D32A10F76800A4B2F8 /* GlobalColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A7B7D22A10F76800A4B2F8 /* GlobalColors.swift */; };
+		32A7B7D42A10F76800A4B2F8 /* GlobalColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A7B7D22A10F76800A4B2F8 /* GlobalColors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,7 +45,7 @@
 		3294EBD129F6DE9700B02215 /* EditingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditingViewModel.swift; sourceTree = "<group>"; };
 		3294EBD729FB9B2300B02215 /* VoiceSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceSettings.swift; sourceTree = "<group>"; };
 		32A7B7CB2A0FBABE00A4B2F8 /* TrainingSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingSelectionView.swift; sourceTree = "<group>"; };
-		32A7B7CE2A10CE9700A4B2F8 /* TrainingSelectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingSelectionViewModel.swift; sourceTree = "<group>"; };
+		32A7B7D22A10F76800A4B2F8 /* GlobalColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalColors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +78,7 @@
 		3264CA2429EC111A00BCEA74 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				32A7B7D12A10F73600A4B2F8 /* Constants */,
 				3294EBD629FB97D600B02215 /* ViewModels */,
 				3294EBD529FB97CD00B02215 /* Models */,
 				3294EBD429FB97BF00B02215 /* Views */,
@@ -129,9 +130,16 @@
 			children = (
 				3294EBD129F6DE9700B02215 /* EditingViewModel.swift */,
 				3270139429EC19690006C5E1 /* LearningViewModel.swift */,
-				32A7B7CE2A10CE9700A4B2F8 /* TrainingSelectionViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		32A7B7D12A10F73600A4B2F8 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				32A7B7D22A10F76800A4B2F8 /* GlobalColors.swift */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,11 +242,11 @@
 			files = (
 				3270139529EC19690006C5E1 /* LearningViewModel.swift in Sources */,
 				3264CA3729EC111E00BCEA74 /* ContentView.swift in Sources */,
+				32A7B7D32A10F76800A4B2F8 /* GlobalColors.swift in Sources */,
 				3294EBCF29F56CE300B02215 /* DebugSettings.swift in Sources */,
 				3294EBD229F6DE9700B02215 /* EditingViewModel.swift in Sources */,
 				3264CA3529EC111E00BCEA74 /* LearnTextApp.swift in Sources */,
 				3294EBD829FB9B2300B02215 /* VoiceSettings.swift in Sources */,
-				32A7B7CF2A10CE9700A4B2F8 /* TrainingSelectionViewModel.swift in Sources */,
 				3294EBC929EDBF2B00B02215 /* LearningView.swift in Sources */,
 				3294EBC629EDBEF600B02215 /* EditingView.swift in Sources */,
 				32A7B7CC2A0FBABE00A4B2F8 /* TrainingSelectionView.swift in Sources */,
@@ -251,11 +259,11 @@
 			files = (
 				3270139629EC19690006C5E1 /* LearningViewModel.swift in Sources */,
 				3264CA3829EC111E00BCEA74 /* ContentView.swift in Sources */,
+				32A7B7D42A10F76800A4B2F8 /* GlobalColors.swift in Sources */,
 				3294EBD029F56CE300B02215 /* DebugSettings.swift in Sources */,
 				3294EBD329F6DE9700B02215 /* EditingViewModel.swift in Sources */,
 				3264CA3629EC111E00BCEA74 /* LearnTextApp.swift in Sources */,
 				3294EBD929FB9B2300B02215 /* VoiceSettings.swift in Sources */,
-				32A7B7D02A10CE9700A4B2F8 /* TrainingSelectionViewModel.swift in Sources */,
 				3294EBCA29EDBF2B00B02215 /* LearningView.swift in Sources */,
 				3294EBC729EDBEF600B02215 /* EditingView.swift in Sources */,
 				32A7B7CD2A0FBABE00A4B2F8 /* TrainingSelectionView.swift in Sources */,

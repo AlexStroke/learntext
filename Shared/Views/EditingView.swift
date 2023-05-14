@@ -4,6 +4,7 @@ import SwiftUI
 struct EditingView: View {
     @ObservedObject var editingViewModel: EditingViewModel
     @EnvironmentObject var learningViewModel: LearningViewModel
+    @Binding var currentScreen: Screen
     
     private let buttonColor = Color(red: 30 / 255, green: 160 / 255, blue: 200 / 255)
     
@@ -43,9 +44,9 @@ struct EditingView: View {
             }
 
             Button(action: {
+                self.currentScreen = .learning
                 learningViewModel.selectedVoice = editingViewModel.selectedVoice
                 learningViewModel.sentences = learningViewModel.splitTextIntoSentences(text: editingViewModel.userText)
-                learningViewModel.isLearning = true
                 learningViewModel.speak(learningViewModel.sentences[learningViewModel.currentSentenceIndex])
             }) {
                 Text("Choose training")

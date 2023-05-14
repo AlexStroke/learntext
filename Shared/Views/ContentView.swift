@@ -19,9 +19,9 @@ struct ContentView: View {
             VStack(spacing: 30) {
                 switch currentScreen {
                 case .editing:
-                    EditingView(editingViewModel: editingViewModel)
+                    EditingView(editingViewModel: editingViewModel, currentScreen: $currentScreen)
                 case .learning:
-                    LearningView(viewModel: learningViewModel)
+                    LearningView(viewModel: learningViewModel, currentScreen: $currentScreen)
                 }
             }
             .padding()

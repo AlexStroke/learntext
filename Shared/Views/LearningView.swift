@@ -3,6 +3,7 @@ import SwiftUI
 
 struct LearningView: View {
     @ObservedObject var viewModel: LearningViewModel
+    @Binding var currentScreen: Screen
     
     private let buttonColor = Color(red: 30 / 255, green: 160 / 255, blue: 200 / 255)
     
@@ -55,7 +56,7 @@ struct LearningView: View {
             }
 
             Button(action: {
-                viewModel.isLearning = false
+                self.currentScreen = .editing
             }) {
                 Text("Edit Text")
                     .font(.system(size: 16, weight: .bold, design: .rounded))

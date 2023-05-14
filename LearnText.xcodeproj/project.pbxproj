@@ -23,6 +23,12 @@
 		3294EBD029F56CE300B02215 /* DebugSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3294EBCE29F56CE300B02215 /* DebugSettings.swift */; };
 		3294EBD229F6DE9700B02215 /* EditingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3294EBD129F6DE9700B02215 /* EditingViewModel.swift */; };
 		3294EBD329F6DE9700B02215 /* EditingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3294EBD129F6DE9700B02215 /* EditingViewModel.swift */; };
+		3294EBD829FB9B2300B02215 /* VoiceSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3294EBD729FB9B2300B02215 /* VoiceSettings.swift */; };
+		3294EBD929FB9B2300B02215 /* VoiceSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3294EBD729FB9B2300B02215 /* VoiceSettings.swift */; };
+		32A7B7CC2A0FBABE00A4B2F8 /* TrainingSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A7B7CB2A0FBABE00A4B2F8 /* TrainingSelectionView.swift */; };
+		32A7B7CD2A0FBABE00A4B2F8 /* TrainingSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A7B7CB2A0FBABE00A4B2F8 /* TrainingSelectionView.swift */; };
+		32A7B7CF2A10CE9700A4B2F8 /* TrainingSelectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A7B7CE2A10CE9700A4B2F8 /* TrainingSelectionViewModel.swift */; };
+		32A7B7D02A10CE9700A4B2F8 /* TrainingSelectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32A7B7CE2A10CE9700A4B2F8 /* TrainingSelectionViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +43,9 @@
 		3294EBC829EDBF2B00B02215 /* LearningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningView.swift; sourceTree = "<group>"; };
 		3294EBCE29F56CE300B02215 /* DebugSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugSettings.swift; sourceTree = "<group>"; };
 		3294EBD129F6DE9700B02215 /* EditingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditingViewModel.swift; sourceTree = "<group>"; };
+		3294EBD729FB9B2300B02215 /* VoiceSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceSettings.swift; sourceTree = "<group>"; };
+		32A7B7CB2A0FBABE00A4B2F8 /* TrainingSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingSelectionView.swift; sourceTree = "<group>"; };
+		32A7B7CE2A10CE9700A4B2F8 /* TrainingSelectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingSelectionViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,14 +78,11 @@
 		3264CA2429EC111A00BCEA74 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				3294EBD629FB97D600B02215 /* ViewModels */,
+				3294EBD529FB97CD00B02215 /* Models */,
+				3294EBD429FB97BF00B02215 /* Views */,
 				3264CA2529EC111A00BCEA74 /* LearnTextApp.swift */,
-				3264CA2629EC111A00BCEA74 /* ContentView.swift */,
 				3264CA2729EC111E00BCEA74 /* Assets.xcassets */,
-				3270139429EC19690006C5E1 /* LearningViewModel.swift */,
-				3294EBD129F6DE9700B02215 /* EditingViewModel.swift */,
-				3294EBC529EDBEF600B02215 /* EditingView.swift */,
-				3294EBC829EDBF2B00B02215 /* LearningView.swift */,
-				3294EBCE29F56CE300B02215 /* DebugSettings.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -96,6 +102,36 @@
 				3264CA3429EC111E00BCEA74 /* macOS.entitlements */,
 			);
 			path = macOS;
+			sourceTree = "<group>";
+		};
+		3294EBD429FB97BF00B02215 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3294EBC829EDBF2B00B02215 /* LearningView.swift */,
+				3294EBC529EDBEF600B02215 /* EditingView.swift */,
+				3264CA2629EC111A00BCEA74 /* ContentView.swift */,
+				32A7B7CB2A0FBABE00A4B2F8 /* TrainingSelectionView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		3294EBD529FB97CD00B02215 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3294EBCE29F56CE300B02215 /* DebugSettings.swift */,
+				3294EBD729FB9B2300B02215 /* VoiceSettings.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		3294EBD629FB97D600B02215 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				3294EBD129F6DE9700B02215 /* EditingViewModel.swift */,
+				3270139429EC19690006C5E1 /* LearningViewModel.swift */,
+				32A7B7CE2A10CE9700A4B2F8 /* TrainingSelectionViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -201,8 +237,11 @@
 				3294EBCF29F56CE300B02215 /* DebugSettings.swift in Sources */,
 				3294EBD229F6DE9700B02215 /* EditingViewModel.swift in Sources */,
 				3264CA3529EC111E00BCEA74 /* LearnTextApp.swift in Sources */,
+				3294EBD829FB9B2300B02215 /* VoiceSettings.swift in Sources */,
+				32A7B7CF2A10CE9700A4B2F8 /* TrainingSelectionViewModel.swift in Sources */,
 				3294EBC929EDBF2B00B02215 /* LearningView.swift in Sources */,
 				3294EBC629EDBEF600B02215 /* EditingView.swift in Sources */,
+				32A7B7CC2A0FBABE00A4B2F8 /* TrainingSelectionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -215,8 +254,11 @@
 				3294EBD029F56CE300B02215 /* DebugSettings.swift in Sources */,
 				3294EBD329F6DE9700B02215 /* EditingViewModel.swift in Sources */,
 				3264CA3629EC111E00BCEA74 /* LearnTextApp.swift in Sources */,
+				3294EBD929FB9B2300B02215 /* VoiceSettings.swift in Sources */,
+				32A7B7D02A10CE9700A4B2F8 /* TrainingSelectionViewModel.swift in Sources */,
 				3294EBCA29EDBF2B00B02215 /* LearningView.swift in Sources */,
 				3294EBC729EDBEF600B02215 /* EditingView.swift in Sources */,
+				32A7B7CD2A0FBABE00A4B2F8 /* TrainingSelectionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

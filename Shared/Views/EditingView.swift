@@ -48,7 +48,7 @@ struct EditingView: View {
                 learningViewModel.isLearning = true
                 learningViewModel.speak(learningViewModel.sentences[learningViewModel.currentSentenceIndex])
             }) {
-                Text("Start Learning")
+                Text("Choose training")
                     .foregroundColor(.white)
                     .frame(width: 200, height: 44)
                     .background(buttonColor)

@@ -7,6 +7,7 @@ class EditingViewModel: ObservableObject {
     @Published var availableVoices: [AVSpeechSynthesisVoice] = EditingViewModel.filterAvailableVoices()
     @Published var selectedVoice: AVSpeechSynthesisVoice? = AVSpeechSynthesisVoice(identifier: "com.apple.voice.premium.en-US.Ava")
     @Published var showingVoicePicker = false
+    @Published var showingTrainingSelection = false
     
     static func filterAvailableVoices() -> [AVSpeechSynthesisVoice] {
         return AVSpeechSynthesisVoice.speechVoices().filter { voice in

@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct LearnTextApp: App {
+    @StateObject private var voiceSettings = VoiceSettings()
+
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(voiceSettings)
         }
     }
 }
